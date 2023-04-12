@@ -1,14 +1,14 @@
 {
     "builds": [
     {
-    "src": "emsite/wsgi.py",
+    "src": "emtrees_unofficial/wsgi.py",
     "use": "@vercel/python"
     }
     ],
     "routes": [
     {
     "src": "/(.*)",
-    "dest": "emsite/wsgi.py"
+    "dest": "emtrees_unofficial/wsgi.py"
     }
     ]
 }
