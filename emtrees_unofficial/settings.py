@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','emtrees-unofficial-site.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1','.vercel.app','emtrees-unofficial-site.vercel.app']
 
 
 # Application definition
@@ -143,7 +143,7 @@ OPTIONS = {
 	'loaders': True
 	}
 #CRISPY_TEMPLATE_PACK = 'bootstrap3'
-STATIC_FILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATIC_FILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
