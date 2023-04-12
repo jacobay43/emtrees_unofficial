@@ -1,0 +1,107 @@
+{% extends "emsite/base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+
+
+{% block content %}
+		<div class="container">
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">About
+                    <small>Us</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{% url 'emsite:index' %}">Home</a>
+                    </li>
+                    <li class="active">About</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+		
+        <!-- Intro Content -->
+        <div id="about-company" class="row">
+            <div class="col-md-6">
+                <img class="img-responsive" src="{% static 'img/our_offerings.jpg' %}" alt="">
+            </div>
+            <div class="col-md-6">
+                <h2>About <strong><font color="red">Emerg</font>ingTrees</strong></h2>
+				<p>Since 2012, Emerging Trees has been a leading provider of on-demand training that address the unique learning needs of professionals. We provide entry, intermediate and advanced level certification programmes for the information technology and management industries while providing customized training programmes guided by your needs assessment and tailored to meet your company's expected outcomes and goals. Our courses can be delivered at our location, your preferred local or international location, and at your discretion.</p>
+				<!--<p>At Emerging Trees we Connect you to global opportunity through Education &amp; Training.</p>
+				<p>We are a full-service learning and testing center with the aim of building capacity in the information technology industry through manpower training in information technology, management courses, and Test of English  </p>
+				-->
+		   </div>
+        </div>
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h2 class="page-header">How we do it</h2>
+			</div>
+			<div class="col-md-6">
+                <img class="img-responsive" src="{% static 'img/logo.png' %}" alt="">
+            </div>
+			<div class="col-md-6">
+			<p>
+			The central purpose of our offerings is to foster strategic thinking while giving practitioners the ability to evaluate their understanding of the knowledge areas.
+			</p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h2 class="page-header">Where We are</h2>
+			</div>
+			<div class="col-md-8">
+                <!-- Embedded Google Map -->
+                <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.1881812630404!2d7.420605314065017!3d10.485826892519082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104d359dcf71bf61%3A0xd499e8b0c2c9890a!2sEmerging%20Trees%20Ltd.!5e0!3m2!1sen!2sng!4v1583808566651!5m2!1sen!2sng"></iframe>
+            </div>
+			<div class="col-md-4">
+				Emerging Trees is headquarted in <strong>Kaduna, Nigeria</strong> with offices in Abuja and Kano. 
+				<br>We lead in out possession of the breadth and expertise to build today's modern workforce.
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.577106289043!2d8.5589386138829!3d12.003736891495963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11ae816601fce60d%3A0x76af978c9d5d2b85!2sEmerging%20Trees!5e0!3m2!1sen!2sng!4v1585051707464!5m2!1sen!2sng" width="100%" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			</div>
+		</div>
+		
+		
+        <!-- Our Partners -->
+        <div id="partners" class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Our Partners</h2>
+            </div>
+			<div class="text-center"><p>To give training a competitive edge we partner with global leaders in technology and education services such as:</p></div>
+			<div class="col-md-2 col-sm-4 col-xs-6">
+                <!--<img class="img-responsive customer-img" src="{% static 'padding.png' %}" alt=" ">-->
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive customer-img" src="{% static 'img/pearson.png' %}" alt="">
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive customer-img" src="{% static 'img/kryterion.png' %}" alt="">
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive customer-img" src="{% static 'img/icdl.png' %}" alt="">
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive customer-img" src="{% static 'img/psi.png' %}" alt="">
+            </div>
+			<!--
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive customer-img" src="http://placehold.it/500x300" alt="">
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive customer-img" src="http://placehold.it/500x300" alt="">
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive customer-img" src="http://placehold.it/500x300" alt="">
+            </div>-->
+        </div>
+        <!-- /.row -->
+	
+        <hr>
+	</div>
+	{% endblock content %}

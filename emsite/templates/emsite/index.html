@@ -1,0 +1,169 @@
+{% extends "emsite/base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+{% load to_hyphen %}
+
+{% block header %}
+    <!-- Header Carousel -->
+	<div class="row">
+	<div class="box">
+	<div class="col-lg-12 text-center">
+    <div id="myCarousel">
+      
+        <!-- Wrapper for slides -->
+         <div class="simple-slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image:url(&quot;{% static 'img/slide-2.jpg' %}&quot;);"></div>
+                <div class="swiper-slide" style="background-image:url(&quot;{% static 'img/slide-3.jpg' %}&quot;);"></div>
+                <div class="swiper-slide" style="background-image:url(&quot;{% static 'img/slide-1.jpg' %}&quot;);"></div>
+				<div class="swiper-slide" style="background-image:url(&quot;{% static 'img/slide-4.jpg' %}&quot;);"></div>
+				<div class="swiper-slide" style="background-image:url(&quot;{% static 'img/slide-5.jpg' %}&quot;);"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <!--<div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>-->
+        </div>
+		</div>
+    </div>
+	</div></div></div>
+{% endblock header %}
+
+{% block content %}
+		<div class="article-list">
+			<div class="container">
+				<div class="intro">
+					<h2 class="text-center">Upcoming Classes</h2><hr/>
+					<!--<p class="text-center">Keep up with the latest news from us</p>-->
+				</div>
+			<div class="row articles">
+					{% for article in articles %}
+					{% with "img/"|add:article.img_for|to_hyphen as imgdir %}
+					<div class="col-md-4 col-sm-6 item" style="min-height: 10; max-height: 10;"><a href="{% static imgdir %}"><img class="img-responsive" src="{% static imgdir %}"></a>
+						<h3 class="name">{{article.title}}</h3>
+						<p class="description">{{article.content}}</p><a href="{% url 'emsite:online_form' %}" class="learn-more">Register »</a></i></a>
+					</div>
+					{% endwith %}
+					{% endfor %}
+			</div>
+			</div>
+		</div>
+        <!-- /.row -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h2 class="page-header">Since 2012</h2>
+			</div>
+			<div class="col-lg-12">
+			<p>Emerging Trees has been a leading provider of on-demand training that addresses the unique learning needs of professionals. We provide entry, intermediate
+and advance level certficaion programmes for the information technology and management industries while providing customized training programmes guided by
+your needs assessment and tailored to meet your company's expected outcomes and goals. Our courses can be delivered at our location, your preferred local or international
+locaton, and at your discreton.</p>
+			<p>Working closely with organizations aids us to understand specific goals and requirements that guide our experienced faculty in planning and developing
+exceptional training interventions to meet essential objectives. Our aim is to provide quality training that will enable experienced professionals to achieve their certification and career enhancement goals while leading to a be better pairing in achieving strategic objectives of enterprises.</p>
+<p>Training is our flagship service and is a critical part of how we impart knowledge and build capacity within organizations.</p>
+		</div></div>
+	</div>
+	<div class="container">
+        <!-- Portfolio Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Our Culture of Learning</h2>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="{% static 'img/michelle-teach.jpg' %}">
+                    <img class="img-responsive img-portfolio img-hover" src="{% static 'img/michelle-teach.jpg' %}" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="{% static 'img/students-1.jpg' %}">
+                    <img class="img-responsive img-portfolio img-hover" src="{% static 'img/students-1.jpg' %}" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="{% static 'img/student-reading.jpg' %}">
+                    <img class="img-responsive img-portfolio img-hover" src="{% static 'img/student-reading.jpg' %}" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="{% static 'img/ayo.jpg' %}">
+                    <img class="img-responsive img-portfolio img-hover" src="{% static 'img/ayo.jpg' %}" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="{% static 'img/group-photo.jpg' %}">
+                    <img class="img-responsive img-portfolio img-hover" src="{% static 'img/group-photo.jpg' %}" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="{% static 'img/student-laptop.jpg' %}">
+                    <img class="img-responsive img-portfolio img-hover" src="{% static 'img/student-laptop.jpg' %}" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+		
+			<div class="row">
+				<div class="col-lg-12">
+					<h2 class="page-header">What Sets Emerging Trees Apart</h2>
+				</div>
+				<div class="col-lg-12">
+				Our unique blended, outcome-centric learning model guides learners every step of the learning curve leading to over 80 percent engagement, completion, and high success rates.
+				<br><strong>We offer:</strong>
+				<ol>
+					<li>Flexible Scheduling</li>
+					<li>Industry Aligned Content</li>
+					<li>Industry Recommended Learning Paths</li>
+				</div>
+			</div>
+		
+	</div><!--
+		<div class="testimonials-clean">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Testimonials </h2>
+                <p class="text-center">Our customers love us! Read what they have to say below.</p>
+            </div>
+            <div class="row people">
+                <div class="col-md-4 col-sm-6 item">
+                    <div class="box">
+                        <p class="description">They provide a wonderful and sound learning platform, truly helping companies achieve manpower development goals.</p>
+                    </div>
+                    <div class="author"><img class="img-circle" src="{% static 'img/generic-male-2.jpg' %}">
+                        <h5 class="name">Ben Johnson</h5>
+                        <p class="title">CEO of Company Inc.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 item">
+                    <div class="box">
+                        <p class="description">Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id.</p>
+                    </div>
+                    <div class="author"><img class="img-circle" src="{% static 'img/generic-male.jpg' %}">
+                        <h5 class="name">Carl Kent</h5>
+                        <p class="title">Founder of Style Co.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 item">
+                    <div class="box">
+                        <p class="description">I came to Emerging Trees for IELTS training and aced the exam in one-sitting with an 8.0. You'll just want to keep learning.</p>
+                    </div>
+                    <div class="author"><img class="img-circle" src="{% static 'img/generic-female.jpg' %}">
+                        <h5 class="name">Emily Clark</h5>
+                        <p class="title">Owner of Creative Ltd.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+	
+    <!-- Call to Action Section -->
+	<!-- Callout -->
+    <aside class="callout">
+        <div class="text-vertical-center">
+            <h2>Register for a Class<br><a href="{% url 'emsite:course_list' %}">»</a></h2>
+        </div>
+    </aside>
+
+    <hr>
+{% endblock content %}

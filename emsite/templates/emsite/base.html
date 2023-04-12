@@ -1,0 +1,201 @@
+{% load bootstrap3 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Emerging Trees Website">
+    <meta name="author" content="">
+
+    <title>EmergingTrees Homepage</title>
+
+	<!-- Base CSS (from 2byex/socialsite)-->
+	<link href="{% static 'css/base.css' %}" rel="stylesheet">
+	
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+	
+    <!-- Custom CSS -->
+    <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static 'font-awesome-4.1.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+		<!--footer CSS-->
+	<link rel="stylesheet" href="{% static 'fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Footer-Basic.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Footer-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Footer-Dark.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<link rel="stylesheet" href="{% static 'css/Article-List.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Brands.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Testimonials.css' %}">
+	<link rel="stylesheet" href="{% static 'css/Features-Clean.css' %}">
+	<link rel="stylesheet" href="{% static 'css/Features-Blue.css' %}">
+	<link rel="stylesheet" href="{% static 'css/Features-Boxed.css' %}">
+	<link rel="stylesheet" href="{% static 'css/Simple-Slider.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/Contact-Form-Clean.css' %}">
+	<style type="text/css">
+	body {
+		font-family: 'Noto Sans', sans-serif;
+		}
+	.asteriskField {
+		display: none;
+		}
+	</style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'emsite:index' %}"><img width="180" height="30" src="{% static 'img/logo_wout_sk.png' %}"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{% url 'emsite:about' %}">About</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'emsite:services' %}">Services</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'emsite:contact' %}">Contact</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+							<li>
+								<a href="{% url 'emsite:it_courses' %}">Information Technology Trainings</a>
+							</li>
+							<li>
+								<a href="{% url 'emsite:leadership_and_mgt_courses' %}">Leadership and Management programs</a>
+							</li>
+							<li>
+								<a href="{% url 'emsite:course_detail' 'soft-skills-training' %}">Soft skills trainings</a>
+							</li>
+							<li>
+								<a href="{% url 'emsite:course_detail' 'immigration-and-university-exams' %}">Immigration and University Exams Preps</a>
+							</li>
+                            <li><!--portfolio-1-col.html-->
+                                <a href="{% url 'emsite:course_list' %}">View All...</a>
+                            </li>
+                        </ul>
+                    </li>
+					<li>
+                        <a href="{% url 'emsite:post_list' %}">Blog</a>
+                    </li><!--
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{% url 'emsite:faq' %}">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'emsite:404' %}">404</a>
+                            </li>
+                        </ul>
+                    </li>-->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    {% block header %}{% endblock header %}
+	{% if messages %}
+		<ul class="messages">
+			{% for message in messages %}
+				<li class="{{message.tags}}">
+					{{message|safe}}
+					<a href="#" class="close">x</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+    <!-- Page Content -->
+	{% block content %}
+	{% endblock content %}
+    <div class="container"></div>
+        <!-- Footer -->
+	<div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-push-6 item text">
+                        <h3>Emerging Trees</h3>
+                        <p>At Emerging Trees, we help industries and individuals achieve their manpower development goals. Our Professional Programs help you stay ahead of the curve as you are trained for certifications recognized worldwide.</p>
+                    </div>
+                    <div class="col-md-3 col-md-pull-6 col-sm-4 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="{% url 'emsite:course_list' %}">Training</a></li>
+                            <li><a href="{% url 'emsite:centers' %}">Test Centers</a></li>
+                            <li><a href="{% url 'emsite:online_form' %}">Exam Registration</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-md-pull-6 col-sm-4 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="{% url 'emsite:about' %}#about-company">Company</a></li>
+                            <li><a href="{% url 'emsite:about' %}#partners">Partners</a></li>
+                            <li><a href="{% url 'emsite:post_list' %}">Blog</a></li>
+							<!--<li><a href="{% url 'emsite:post_list' %}">Careers</a></li>-->
+                        </ul>
+                    </div>
+                    <div align="right" class="col-md-12 col-sm-4 item"><a href="https://web.facebook.com/Emtrees/"><i class="fa fa-facebook-square fa-2x"></i></a>&nbsp;&nbsp;<a href="https://twitter.com/emerging_trees"><i class="fa fa-twitter-square fa-2x"></i></a>&nbsp;&nbsp;<a href="https://www.linkedin.com/company/emerging-trees-ltd/"><i class="fa fa-linkedin-square fa-2x"></i></a></a></div>
+                  </div>
+                <p class="copyright">Emerging Trees © 2020</p>
+            </div>
+        </footer>
+    </div>
+    <script id="bs-live-reload" data-sseport="1744" data-lastchange="1584331980792" src="{% static 'js/livereload.js' %}"></script>
+	
+		
+    
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="{% static 'js/jquery-1.11.0.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	
+	<script src="{% static 'js/swiper.jquery.min.js' %}"></script>
+	 <script src="{% static 'js/Simple-Slider1.js' %}"></script>
+	 <script src="{% static 'js/dropdown.js' %}"></script>
+	
+	<!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 3000 //changes the speed
+    })
+    </script>
+</body>
+
+</html>

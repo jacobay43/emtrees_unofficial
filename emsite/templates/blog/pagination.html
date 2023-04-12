@@ -1,0 +1,30 @@
+{% load bootstrap3 %}
+<div class="row text-center">
+    <div class="col-lg-12">
+		<div class="pagination">
+			<span class="step-links">
+				<ul class="pagination">
+				{% if page.has_previous %}
+					<li>
+                        <a href="?page={{page.previous_number}}">&laquo;</a>
+                    </li>
+				{% endif %}
+				{% for p in page.paginator.page_range %}
+					{% if p == page.number %}
+					<li class="active">
+						<a href="?page={{p}}">{{p}}</a>
+					</li>
+					{% else %}
+					<li>
+						<a href="?page={{p}}">{{p}}</a>
+					</li>
+					{% endif %}
+				{% endfor %}
+				{% if page.has_next %}
+					<li>
+                        <a href="?page={{page.next_page_number}}">&raquo;</a>
+                    </li>
+				{% endif %}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,36 @@
+{% extends "blog/base.html" %}
+{% load bootstrap3 %}
+{% load blog_tags %}
+
+{% block title %}My Blog{% endblock %}
+
+{% block content %}
+	<h1><strong><font color="red">Emerg</font>ingTrees</strong> Blog</h1>
+	{% if tag %}
+		<h2>Posts tagged with "{{tag.name}}"</h2>
+	{% endif %}
+	{% for post in posts %}
+	<h2>
+		<a href="{{post.get_absolute_url}}">
+			{{post.title}}
+		</a>
+	</h2>
+	<h4>
+		<p class="tags">
+		Tags: 
+		{% for tag in post.tags.all %}
+			<a href='{% url "emsite:post_list_by_tag" tag.slug %}'>
+			{{tag.name}}
+			</a>
+			{% if not forloop.last %}, {% endif %}
+		{% endfor %}
+		</p>
+	</h4>
+	
+	<p class="date">
+		Published {{post.publish}} by {{post.author_name}}
+	</p>
+	{{post.body|markdown|truncatewords_html:30}}
+	{% endfor %}
+	{% include "blog/pagination.html" with page=posts %}
+{% endblock %}

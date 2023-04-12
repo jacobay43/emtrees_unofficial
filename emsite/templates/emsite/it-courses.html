@@ -1,0 +1,57 @@
+{% extends "emsite/base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+{% load course_tags %}
+{% load to_hyphen %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Information Technology courses
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{% url 'emsite:index' %}">Home</a>
+                    </li>
+                    <li class="active">Information Technology courses</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+		{% for course in courses %}
+        <!-- Project X -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="{{course.get_absolute_url}}">
+                    {% with "img/"|add:course.title|to_hyphen|add:"-1.jpg" as imgdir %}
+                    <img class="img-responsive img-hover" src="{% static imgdir %}" alt="">
+				{% endwith %}
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>{{course.title}}</h3>
+                <p>{{course.description|truncatewords:224|linebreaks}}</p>
+                <a class="btn btn-primary" href="{{course.get_absolute_url}}">View Details</i></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+		{% empty %}
+			<p>No available courses</p>
+		{% endfor %}
+
+
+        <!-- Pagination -->
+		{% include "emsite/pagination.html" with page=courses %}
+        
+        <hr>
+
+    </div>
+    <!-- /.container -->
+
+{% endblock content %}

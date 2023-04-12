@@ -34,12 +34,19 @@ ALLOWED_HOSTS = ['localhost']
 # Application definition
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'emsite.apps.EmsiteConfig',
+	'bootstrap3',
+    'django.contrib.admin',
+	'taggit',
+	'django.contrib.sites',
+	'django.contrib.sitemaps',
+	'django.contrib.postgres',
+	'crispy_forms'
 ]
 
 MIDDLEWARE = [

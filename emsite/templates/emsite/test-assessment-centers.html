@@ -1,0 +1,58 @@
+{% extends "emsite/base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+
+
+{% block content %}
+		<div class="container">
+			<!-- Page Heading/Breadcrumbs -->
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header">Testing and Assessment Centers
+					</h1>
+				</div>
+				<div class="col-lg-12">
+					<p>Certification relates to the ability to deliver the required knowledge and it attests to a person's overall competencies to perform a role. We offer testing in more than <strong>2,000</strong> global certification programs, ranging from medical to legal practice, information technology, management, admission exams, and many more. 
+					 </p>
+					 <p>We have partnered with leaders in global testing and assessment such as:</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<h2><strong>Pearson VUE</h2></strong>
+					<p>Pearson VUE offers innovative computer based testing solutions through secure, electronic test delivery.</p>
+				</div>
+				<div class="col-md-6">
+					<img class="img-responsive" src="{% static 'img/pearson.png' %}" alt="">
+				</div>
+			 </div>
+			 <div class="row">
+				<div class="col-md-6">
+					<h2><strong>Kryterion</h2></strong>
+					<p>Kryterion helps the most trusted and fastest growing companies, associations and education providers develop and deliver exams.</p>
+				</div>
+				<div class="col-md-6">
+					<img class="img-responsive" src="{% static 'img/kryterion.png' %}" alt="">
+				</div>
+			 </div>
+			 <div class="row">
+				<div class="col-md-6">
+					<h2><strong>PSI</h2></strong>
+					<p>PSI is a global leader in workforce solutions with over 70 years experience delivering successful testing programmes to help people achieve success in their academic, personal, and work lives.</p>
+				</div>
+				<div class="col-md-6">
+					<img class="img-responsive" src="{% static 'img/psi.png' %}" alt="">
+				</div>
+			 </div>
+			 <div class="row">
+				<div class="col-md-6">
+					<h2><strong>ICDL</h2></strong>
+					<p>ICDL is the world's leading computer skills solution provider.</p>
+				</div>
+				<div class="col-md-6">
+					<img class="img-responsive" src="{% static 'img/icdl.png' %}" alt="">
+				</div>
+			 </div>
+			 <hr/>
+		</div>
+{% endblock %}

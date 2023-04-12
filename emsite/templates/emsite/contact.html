@@ -1,0 +1,78 @@
+{% extends "emsite/base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Contact
+                    <small>Us</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{% url 'emsite:index' %}">Home</a>
+                    </li>
+                    <li class="active">Contact</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        <div class="row">
+            <!-- Map Column -->
+            <div class="col-md-8">
+                <!-- Embedded Google Map -->
+                <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.1881812630404!2d7.420605314065017!3d10.485826892519082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104d359dcf71bf61%3A0xd499e8b0c2c9890a!2sEmerging%20Trees%20Ltd.!5e0!3m2!1sen!2sng!4v1583808566651!5m2!1sen!2sng"></iframe>
+            </div>
+            <!-- Contact Details Column -->
+            <div class="col-md-4">
+                <h3>Contact Details</h3>
+                <p>
+                    5 Keffi Road<br>Barnawa, Kaduna South<br>
+                </p>
+                <p><i class="fa fa-phone"></i> 
+                    <abbr title="Phone">P</abbr>: 062 291 065<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0803 336 3603<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0809 520 4520
+                <p><i class="fa fa-envelope-o"></i> 
+                    <abbr title="Email">E</abbr>: <a href="mailto:contactus@emergingtrees.com">contactus@emergingtrees.com</a>
+                </p>
+                <p><i class="fa fa-clock-o"></i> 
+                    <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Saturday: 10:00 AM to 4:00 PM</p>
+                <ul class="list-unstyled list-inline list-social-icons">
+                    <li>
+                        <a href="https://web.facebook.com/Emtrees/"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/company/emerging-trees-ltd/"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/emerging_trees"><i class="fa fa-twitter-square fa-2x"></i></a>
+                    </li>
+                    <!--<li>
+                        <a href="#"><i class="fa fa-instagram-plus-square fa-2x"></i></a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Contact Form -->
+        <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Send us a Message</h2>
+				<div class="contact-clean">					
+					{% csrf_token %}
+					{% crispy form %}
+				</div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+	</div>
+{% endblock content %}
