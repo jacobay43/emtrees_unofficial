@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost','.vercel.app']
 
 
 # Application definition
@@ -77,7 +77,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "emtrees_unofficial.wsgi.application"
+WSGI_APPLICATION = "emtrees_unofficial.wsgi.app"
 
 
 # Database
