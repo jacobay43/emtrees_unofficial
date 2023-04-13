@@ -12,14 +12,7 @@
         "config": {
         "distDir": "staticfiles_build"
         }
-    },
-    {
-    "functions": {
-        "api/**/*.py": {
-        "excludeFiles": "public/**"
-        }
-    }
-    }
+    }    
     ],
     "routes": [
     {
