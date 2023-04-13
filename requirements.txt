@@ -5,4 +5,4 @@ Markdown==3.4.3
 python-dotenv==1.0.0
 Pillow==9.5.0
 django_bootstrap3==23.1
-psycopg2==2.9.6
+psycopg2-binary
