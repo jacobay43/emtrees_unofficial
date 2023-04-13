@@ -23,5 +23,10 @@
         "src": "/(.*)",
         "dest": "emtrees_unofficial/wsgi.py"
     }
-    ]
+    ],
+    "functions": {
+        "api/**/*.py": {
+        "excludeFiles": "public/**"
+        }
+    }
 }
