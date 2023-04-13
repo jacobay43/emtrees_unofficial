@@ -26,7 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+SITE_ID = 1
 
 ALLOWED_HOSTS = ['127.0.0.1','.vercel.app','emtrees-unofficial-site.vercel.app']
 
@@ -84,8 +85,13 @@ WSGI_APPLICATION = "emtrees_unofficial.wsgi.app"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "URL": os.getenv('POSTGRES_URL'),
+        "NAME": os.getenv('PGNAME'),
+        "USER": os.getenv('PGUSER'),
+        "PASSWORD": os.getenv('PGPASSWORD'),
+        "HOST": os.getenv('PGHOST'),
+        "PORT": os.getenv('PGPORT')
     }
 }
 
